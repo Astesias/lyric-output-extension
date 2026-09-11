@@ -6,6 +6,15 @@
 
 ---
 
+## 下载
+
+- 📦 **最新版本**：<https://github.com/Astesias/lyric-output-extension/releases/latest>
+- ⬇️ **直接下载 v0.0.1**：[`lyric-output-0.0.1.vsix`](https://github.com/Astesias/lyric-output-extension/releases/download/v0.0.1/lyric-output-0.0.1.vsix)
+
+> 下载 `.vsix` 后，在 VS Code 扩展面板右上角 `⋯` → **从 VSIX 安装…** 选择该文件即可。
+
+---
+
 ## 功能特性
 
 - 🎧 **实时歌词同步**：通过 Windows SMTC 检测当前播放歌曲，自动获取并同步显示歌词
