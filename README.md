@@ -25,19 +25,14 @@
 | **VS Code 1.60+** | 扩展运行环境 |
 | **网易云音乐（新版网易云已原生支持 SMTC）** | UWP 版，或桌面版[**配置 SMTC 支持**](#让网易云支持-smtc) |
 
-### 让网易云支持 SMTC
-
-桌面版网易云默认**不向系统上报播放进度（SMTC）**，需借助 BetterNCM 桥接。完整图文教程见：
-👉 **[让网易云支持 SMTC - 一叶舟记](https://blog.lonzov.top/posts/betterncm/)**
-
-简要步骤：
-
-1. **下载核心文件**：获取 `BetterNCMII.dll`（[发布页](https://github.com/std-microblock/chromatic/releases) / [官网](https://microblock.cc/betterncm)）
-2. **注入插件**：关闭网易云 → 将 `BetterNCMII.dll` 重命名为 `msimg32.dll` → 放入网易云安装目录（与 `cloudmusic.exe` 同级）→ 重启，出现 🌀 图标即注入成功
-3. **安装 SMTC 桥接扩展**：点击 🌀 → 打开扩展市场 → 搜索并安装 **`InfLink-rs`**（勿装旧版 `InfLink`，二者共存会冲突）→ 按提示重载
+### 让网易云支持 SMTC（新版网易云已原生支持 SMTC）
 
 > 💡 新版网易云已原生支持 SMTC，若仅需 SMTC 可不装插件；但 BetterNCM 的 SMTC 更稳定，且附带界面美化。
 > 若扩展市场报 403，可在 BetterNCM 设置中更换扩展源。
+
+借助 BetterNCM 桥接。完整图文教程见：
+👉 **[让网易云支持 SMTC - 一叶舟记](https://blog.lonzov.top/posts/betterncm/)**
+
 
 ### Python 依赖
 
