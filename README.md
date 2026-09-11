@@ -203,7 +203,7 @@ A: Cookie 可能过期，请重新从浏览器获取并更新配置。
 A: 调整 `timeOffset` 参数，负数让歌词晚出现，正数让歌词早出现。
 
 **Q: SMTC 检测不到歌曲？**
-A: 确保使用网易云 UWP 版，或桌面版[配置了 SMTC 支持](#让网易云支持-smtc)（BetterNCM + InfLink-rs）。
+A: 确保使用网易云 UWP 版或最新版，或桌面版[配置了 SMTC 支持](#让网易云支持-smtc)（BetterNCM + InfLink-rs）。
 
 **Q: 歌词只有原文没有翻译？**
 A: 部分歌曲本身没有上传翻译歌词，并非程序问题。

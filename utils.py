@@ -35,7 +35,7 @@ class chained_request():
         self._payload = None
         self._ajax = False
 
-    def payload(self, data):
+    def payload(self, data):    
         self._payload = data
         return self
 
