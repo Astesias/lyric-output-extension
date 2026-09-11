@@ -1,0 +1,76 @@
+{
+    "name": "lyric-output",
+    "displayName": "🎵 网易云歌词输出",
+    "version": "1.0.0",
+    "description": "在 VS Code 中显示网易云音乐实时歌词",
+    "publisher": "lyric-output",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:lyric-output.toggle",
+        "*"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "lyric-output.toggle",
+                "title": "🎵 歌词同步: 启动/停止"
+            }
+        ],
+        "configuration": {
+            "title": "🎵 网易云歌词",
+            "properties": {
+                "lyric-output.pythonPath": {
+                    "type": "string",
+                    "default": "C:/ProgramData/Anaconda/python.exe",
+                    "description": "Python 解释器路径"
+                },
+                "lyric-output.cookie": {
+                    "type": "string",
+                    "default": "",
+                    "description": "网易云音乐 Cookie（从浏览器开发者工具复制，包含 MUSIC_U、__csrf 等）"
+                },
+                "lyric-output.csrfToken": {
+                    "type": "string",
+                    "default": "",
+                    "description": "网易云音乐 csrf_token（从 Cookie 中的 __csrf 字段获取）"
+                },
+                "lyric-output.user_agent": {
+                    "type": "string",
+                    "default": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0",
+                    "description": "User-Agent 请求头"
+                },
+                "lyric-output.timeOffset": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "歌词时间偏移（秒），感觉歌词快了调小，感觉歌词慢了调大，但是网易云自己有时候也不准"
+                },
+                "lyric-output.timerMode": {
+                    "type": "string",
+                    "default": "smtc",
+                    "enum": ["smtc", "wall_clock"],
+                    "enumDescriptions": [
+                        "SMTC 播放进度（更准确，从播放器读取真实进度，需要安装网易云SMTC插件）",
+                        "系统时钟（兼容性好，从检测到歌曲时开始计时，需要切歌一次才能准确计时）"
+                    ],
+                    "description": "计时方案"
+                },
+                "lyric-output.showTitleInStatusBar": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否在右下角状态栏显示当前歌名"
+                },
+                "lyric-output.showTitleInLyrics": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "每次输出歌词时是否附带歌名行（歌名始终在切歌时输出一次，此项控制后续歌词是否也带）"
+                }
+            }
+        }
+    }
+}
