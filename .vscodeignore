@@ -1,0 +1,23 @@
+# ── 敏感文件（含 Cookie / csrf，绝不能打进安装包）──
+config.json
+config.example.json
+
+# ── 运行时缓存与临时文件 ──
+lyric_cache.json
+_tmp_*
+*.log
+*.vsix
+
+# ── 开发调试脚本（非运行时必需）──
+debug_smtc.py
+test_timer.py
+
+# ── 仓库/文档资源 ──
+.git/**
+.gitignore
+.vscode/**
+images/**
+
+# ── Python 编译产物 ──
+__pycache__/**
+*.py[cod]

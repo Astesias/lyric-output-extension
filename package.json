@@ -1,9 +1,13 @@
 {
     "name": "lyric-output",
     "displayName": "🎵 网易云歌词输出",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "在 VS Code 中显示网易云音乐实时歌词",
     "publisher": "lyric-output",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Astesias/lyric-output-extension.git"
+    },
     "engines": {
         "vscode": "^1.60.0"
     },
