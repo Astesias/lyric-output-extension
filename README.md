@@ -66,7 +66,31 @@ lyric-output-extension/
 
 ### 1. 安装扩展
 
-将整个文件夹放入 VS Code 扩展目录，或通过 `vsce package` 打包后安装。
+**方式 A：直接放入扩展目录（推荐本地/开发使用）**
+
+将整个文件夹放入 VS Code 的扩展目录即可。**如何找到扩展目录？**
+
+- **面板方式（最省事，跨平台）**：`Ctrl+Shift+P` 打开命令面板 → 输入
+  `Extensions: Open Extensions Folder`（中文界面：**扩展: 打开扩展文件夹**）→ 回车，
+  系统文件管理器会直接打开该目录
+- **手动路径**（默认位置）：
+
+  | 系统 | 路径 |
+  |------|------|
+  | Windows | `%USERPROFILE%\.vscode\extensions`（即 `C:\Users\<用户名>\.vscode\extensions`） |
+  | macOS / Linux | `~/.vscode/extensions` |
+
+  > 若使用 VS Code Insiders / 便携版等，目录名会不同（如 `.vscode-insiders`），以命令面板方式为准。
+
+**方式 B：打包成 `.vsix` 安装**
+
+```bash
+npm install -g @vscode/vsce
+vsce package                 # 生成 lyric-output-<版本>.vsix
+```
+
+然后在 VS Code 扩展面板 → 右上角 `...` → **从 VSIX 安装…**
+（或命令面板 `Extensions: Install from VSIX...`）选择生成的 `.vsix` 文件。
 
 ### 2. 配置 Cookie 与 csrf_token（必须）
 
