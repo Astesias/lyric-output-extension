@@ -68,14 +68,25 @@ lyric-output-extension/
 
 将整个文件夹放入 VS Code 扩展目录，或通过 `vsce package` 打包后安装。
 
-### 2. 配置 Cookie（必须）
+### 2. 配置 Cookie 与 csrf_token（必须）
 
-打开 VS Code 设置 → 扩展 → 🎵 网易云歌词，填入：
+歌词接口需要登录态，必须提供 **Cookie** 和 **csrf_token** 两项。获取步骤：
 
-- **Cookie**：从浏览器开发者工具复制网易云音乐登录后的完整 Cookie
-- **csrfToken**：Cookie 中 `__csrf` 字段的值
+1. **登录网页版**：浏览器打开 <https://music.163.com> 并登录账号
+2. **打开开发者工具**：按 `F12`（或右键 → 检查），切到 **网络 / Network** 面板
+3. **触发并筛选请求**：在页面播放任意一首歌；在筛选框中输入 `lyric`，找到形如
+   `lyric?csrf_token=xxxx` 的请求（类型 Fetch/XHR）
+4. **取 csrf_token**：点开该请求 → **负载 / Payload** 标签 → 「查询字符串参数」→ 复制 `csrf_token` 的值
+5. **取 Cookie**：同一个请求 → **标头 / Headers** 标签 → 「请求标头 / Request Headers」→ 复制 `Cookie:` 后的**完整字符串**
 
-> 💡 或者直接编辑项目根目录的 `config.json`：
+然后打开 VS Code 设置 → 扩展 → 🎵 网易云歌词，分别填入：
+
+- **Cookie**：第 5 步复制的完整 Cookie 字符串
+- **csrfToken**：第 4 步复制的 `csrf_token`（与 Cookie 中的 `__csrf` 值相同）
+
+> ⚠️ 这两项等同于你的账号登录凭证，**切勿泄露或提交到公开仓库**。本项目已通过 `.gitignore` 排除 `config.json`。
+
+> 💡 也可以直接编辑项目根目录的 `config.json`：
 > ```json
 > {
 >     "csrf_token": "你的csrf",
