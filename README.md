@@ -23,7 +23,21 @@
 | **Windows 10/11** | SMTC 需要 Windows 系统支持 |
 | **Python 3.7+** | 推荐 Anaconda / Miniconda |
 | **VS Code 1.60+** | 扩展运行环境 |
-| **网易云音乐** | UWP 版或**安装 SMTC 插件**的桌面版 |
+| **网易云音乐** | UWP 版，或桌面版[**配置 SMTC 支持**](#让网易云支持-smtc) |
+
+### 让网易云支持 SMTC
+
+桌面版网易云默认**不向系统上报播放进度（SMTC）**，需借助 BetterNCM 桥接。完整图文教程见：
+👉 **[让网易云支持 SMTC - 一叶舟记](https://blog.lonzov.top/posts/betterncm/)**
+
+简要步骤：
+
+1. **下载核心文件**：获取 `BetterNCMII.dll`（[发布页](https://github.com/std-microblock/chromatic/releases) / [官网](https://microblock.cc/betterncm)）
+2. **注入插件**：关闭网易云 → 将 `BetterNCMII.dll` 重命名为 `msimg32.dll` → 放入网易云安装目录（与 `cloudmusic.exe` 同级）→ 重启，出现 🌀 图标即注入成功
+3. **安装 SMTC 桥接扩展**：点击 🌀 → 打开扩展市场 → 搜索并安装 **`InfLink-rs`**（勿装旧版 `InfLink`，二者共存会冲突）→ 按提示重载
+
+> 💡 新版网易云已原生支持 SMTC，若仅需 SMTC 可不装插件；但 BetterNCM 的 SMTC 更稳定，且附带界面美化。
+> 若扩展市场报 403，可在 BetterNCM 设置中更换扩展源。
 
 ### Python 依赖
 
@@ -181,7 +195,7 @@ A: Cookie 可能过期，请重新从浏览器获取并更新配置。
 A: 调整 `timeOffset` 参数，负数让歌词晚出现，正数让歌词早出现。
 
 **Q: SMTC 检测不到歌曲？**
-A: 确保使用网易云 UWP 版，或桌面版安装了 SMTC 插件。
+A: 确保使用网易云 UWP 版，或桌面版[配置了 SMTC 支持](#让网易云支持-smtc)（BetterNCM + InfLink-rs）。
 
 **Q: 歌词只有原文没有翻译？**
 A: 部分歌曲本身没有上传翻译歌词，并非程序问题。
