@@ -23,7 +23,7 @@
 | **Windows 10/11** | SMTC 需要 Windows 系统支持 |
 | **Python 3.7+** | 推荐 Anaconda / Miniconda |
 | **VS Code 1.60+** | 扩展运行环境 |
-| **网易云音乐** | UWP 版，或桌面版[**配置 SMTC 支持**](#让网易云支持-smtc) |
+| **网易云音乐（新版网易云已原生支持 SMTC）** | UWP 版，或桌面版[**配置 SMTC 支持**](#让网易云支持-smtc) |
 
 ### 让网易云支持 SMTC
 
